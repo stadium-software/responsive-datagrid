@@ -12,7 +12,7 @@ https://github.com/stadium-software/responsive-datagrid/assets/2085324/dfd8f3b6-
 ## Database, Connector and DataGrid
 
 1. Use the instructions from [this repo](https://github.com/stadium-software/samples-database) to setup the database and DataGrid for this sample
-2. Assign a class to the DataGrid, like "myGrid". This class will be used to identify the DataGrid that will become responsive. 
+2. Assign a class to the DataGrid, like "datagrid-responsive". This class will be used to identify the DataGrid that will become responsive. 
 
 ## Global Script
 
@@ -50,11 +50,11 @@ observer.observe(el, options);
 
 ## Page.Load Event Handler
 
-1. Drag the "ResponsiveDataGrid" global script into the event handler as the first action in the script (important!)
-2. Enter the class you added to the DataGrid above into the *DataGridClass* input parameter
+1. Drag the "ResponsiveDataGrid" global script into the event handler as the **first action** in the script (important!)
+2. Enter the class you added to the DataGrid above into the *DataGridClass* input parameter (e.g. "datagrid-responsive")
 
 ## Customising the ResponsiveDataGrid
-The *responsive-datagrid-variables.css* file included in this repo contains a set of variables that can be changed to customise the modal popup. Follow the steps below to create a custom popup implementation 
+The *responsive-datagrid-variables.css* file included in this repo contains a set of variables that can be changed to customise the responsive view
 1. Open the CSS file called [*responsive-datagrid-variables.css*](responsive-datagrid-variables.css) from this repo in an editor of your choice (I recommend [VS Code](https://code.visualstudio.com/))
 2. Adjust the variables in the *:root* element as you see fit
 
