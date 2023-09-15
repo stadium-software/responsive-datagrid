@@ -1,0 +1,24 @@
+/*the mobile breakpoint is 768px*/
+:root {
+    --max-height: 400px;
+    --first-cell-background-color: #3399ff;
+    --first-cell-font-color: white;
+    
+    --cell-heading-font-size: 9px;
+    --cell-heading-font-weight: normal;
+    
+    --cell-heading-top-padding: 0;
+    --cell-heading-right-padding: 0;
+    --cell-heading-bottom-padding: 6px;
+    --cell-heading-left-padding: 0;
+
+    --row-bottom-border-color: #ddd;
+    --row-bottom-gap: 12px;
+
+    --footer-pagination-background-color: white;
+
+    --footer-pagination-top-padding: 4px;
+    --footer-pagination-right-padding: 2px;
+    --footer-pagination-bottom-padding: 4px;
+    --footer-pagination-left-padding: 2px;
+}
