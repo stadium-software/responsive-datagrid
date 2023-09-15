@@ -24,8 +24,8 @@ var tableClassName = "." + ~.Parameters.Input.DataGridClass;
 attachResponsiveClass();
 
 function convertRows() {
-    let tblheadings = document.querySelectorAll(".responsive-datagrid thead tr th");
-    let tblrows = document.querySelectorAll(".responsive-datagrid tbody tr");
+    let tblheadings = document.querySelectorAll(".stadium-responsive-datagrid thead tr th");
+    let tblrows = document.querySelectorAll(".stadium-responsive-datagrid tbody tr");
     for (let i = 0; i < tblrows.length; i++) {
         let tblcells = tblrows[i].querySelectorAll("td");
         for (let th = 0; th < tblheadings.length; th++) {
@@ -34,9 +34,9 @@ function convertRows() {
     }
 }
 function attachResponsiveClass() { 
-    document.querySelector(tableClassName).classList.add("responsive-datagrid");
+    document.querySelector(tableClassName).classList.add("stadium-responsive-datagrid");
 }
-var el = document.querySelector(".responsive-datagrid .table"),
+var el = document.querySelector(".stadium-responsive-datagrid .table"),
     options = {
         characterData: true,
         attributes: false,

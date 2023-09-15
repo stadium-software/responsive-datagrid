@@ -1,8 +1,8 @@
 @media screen and (max-width: 768px) {
-  .responsive-datagrid.control-container {
+  .stadium-responsive-datagrid.control-container {
         padding-right: 0;
   }
-  .responsive-datagrid {
+  .stadium-responsive-datagrid {
     max-height: var(--max-height);
     overflow-y: scroll;
     padding: 0;
