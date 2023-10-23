@@ -21,7 +21,7 @@ https://github.com/stadium-software/responsive-datagrid/assets/2085324/aea3fa2b-
 1. Create a Global Script and name it "ResponsiveDataGrid"
 2. Add an Input parameter to the "ResponsiveDataGrid" script and call it "DataGridClass"
 3. Drag a Javascript action into the script and paste the Javascript below into the *code* property
-```
+```javascript
 var tableClassName = "." + ~.Parameters.Input.DataGridClass;
 attachResponsiveClass();
 
@@ -67,7 +67,7 @@ How to apply the CSS to your application
 
 #### Stadium 6 (versions 6.6 and above)
 1. Paste the link tags below into the *head* property of your application
-```
+```html
 <link rel="stylesheet" href="{EmbeddedFiles}/CSS/responsive-datagrid.css">
 <link rel="stylesheet" href="{EmbeddedFiles}/CSS/responsive-datagrid-variables.css">
 ``` 
@@ -75,7 +75,7 @@ How to apply the CSS to your application
 #### Stadium 5
 1. Add a Javascript action into the Page.load event handler 
 2. Paste the Javascript below into the Javascript action Code Editor popup
-```
+```javascript
 let URL = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname + "//";
 let el1 = document.createElement("link");
 el1.setAttribute("rel","stylesheet");
