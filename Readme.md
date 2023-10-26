@@ -2,11 +2,10 @@
 
 Stadium's DataGrids are not responsive out-of-the-box. So, here is a method you can use to make your DataGrids display your rows as a column at a set minimum viewport width. 
 
-
 https://github.com/stadium-software/responsive-datagrid/assets/2085324/aea3fa2b-880f-40ef-ba89-a44ca710c5fc
 
-
-<hr>
+# Version 
+1.1 Added code to detect uniqueness of DataGrid classname on page
 
 ## Application Setup
 1. Check the *Enable Style Sheet* checkbox in the application properties
@@ -22,12 +21,22 @@ https://github.com/stadium-software/responsive-datagrid/assets/2085324/aea3fa2b-
 2. Add an Input parameter to the "ResponsiveDataGrid" script and call it "DataGridClass"
 3. Drag a Javascript action into the script and paste the Javascript below into the *code* property
 ```javascript
-var tableClassName = "." + ~.Parameters.Input.DataGridClass;
+let dgClassName = "." + ~.Parameters.Input.DataGridClass;
+let dg = document.querySelectorAll(dgClassName);
+if (dg.length == 0) {
+    dg = document.querySelector(".data-grid-container");
+} else if (dg.length > 1) {
+    console.error("The class '" + dgClassName + "' is assigned to multiple DataGrids. DataGrids using this script must have unique classnames");
+    return false;
+} else { 
+    dg = dg[0];
+}
+let table = dg.querySelector("table");
 attachResponsiveClass();
 
 function convertRows() {
-    let tblheadings = document.querySelectorAll(".stadium-responsive-datagrid thead tr th");
-    let tblrows = document.querySelectorAll(".stadium-responsive-datagrid tbody tr");
+    let tblheadings = table.querySelectorAll("thead tr th");
+    let tblrows = table.querySelectorAll("tbody tr");
     for (let i = 0; i < tblrows.length; i++) {
         let tblcells = tblrows[i].querySelectorAll("td");
         for (let th = 0; th < tblheadings.length; th++) {
@@ -36,10 +45,9 @@ function convertRows() {
     }
 }
 function attachResponsiveClass() { 
-    document.querySelector(tableClassName).classList.add("stadium-responsive-datagrid");
+    dg.classList.add("stadium-responsive-datagrid");
 }
-var el = document.querySelector(".stadium-responsive-datagrid .table"),
-    options = {
+let options = {
         characterData: true,
         attributes: false,
         childList: true,
@@ -47,7 +55,7 @@ var el = document.querySelector(".stadium-responsive-datagrid .table"),
         characterDataOldValue: true,
     },
     observer = new MutationObserver(convertRows);
-observer.observe(el, options);
+observer.observe(table, options);
 ```
 
 ## Page.Load Event Handler
