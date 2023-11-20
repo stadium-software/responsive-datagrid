@@ -25,6 +25,7 @@ This repo contains one Stadium 6.7 application
 2. Add an Input parameter to the "ResponsiveDataGrid" script and call it "DataGridClass"
 3. Drag a Javascript action into the script and paste the Javascript below into the *code* property
 ```javascript
+/* Stadium Script Version 1.1 */
 let dgClassName = "." + ~.Parameters.Input.DataGridClass;
 let dg = document.querySelectorAll(dgClassName);
 if (dg.length == 0) {
@@ -88,6 +89,7 @@ How to apply the CSS to your application
 1. Add a Javascript action into the Page.load event handler 
 2. Paste the Javascript below into the Javascript action Code Editor popup
 ```javascript
+/* Stadium Script Version 1.1 */
 let URL = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname + "//";
 let el1 = document.createElement("link");
 el1.setAttribute("rel","stylesheet");
