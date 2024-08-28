@@ -4,56 +4,50 @@
         padding-right: 0;
   }
   .stadium-responsive-datagrid {
-    max-height: var(--max-height);
+    max-height: var(--max-height, 400px);
     overflow-y: scroll;
     padding: 0;
     
-    & tfoot {
+    tfoot {
       position: sticky;
       bottom: 0;
       z-index: 2;
-      background-color: var(--footer-pagination-background-color);
+      background-color: var(--footer-pagination-background-color, var(--DATA-GRID-PAGINATION-BACKGROUND-COLOR));
     }
-    & .table {
+    .table {
         width: 100%;
     }
-    & thead {
+    thead {
       display: none;
     }
-    & tbody tr {
+    tbody tr {
       display: block;
-      margin-bottom: var(--row-bottom-gap);
-      border: 1px solid var(--row-bottom-border-color);
+      margin-bottom: var(--row-bottom-gap, 12px);
+      border: 1px solid var(--row-bottom-border-color, var(--DATA-GRID-CELL-BORDER-COLOR));
     }
-    & tbody tr td {
+    tbody tr td {
       display: block;
       width: 100%;
       position: relative;
       white-space: pre-wrap;
       border: none;
     }
-    & tbody tr td:nth-child(1) {
-      background-color: var(--first-cell-background-color);
-      color: var(--first-cell-font-color);
+    tbody tr td:nth-child(1) {
+      background-color: var(--first-cell-background-color, var(--DATA-GRID-PAGINATION-ACTIVE-BACKGROUND-COLOR));
+      color: var(--first-cell-font-color, var(--DATA-GRID-PAGINATION-ACTIVE-FONT-COLOR));
     }
-    & tbody tr td:not(td:first-child):before {
+    tbody tr td:not(td:first-child):before {
       content: attr(name);
       display: block;
-      font-size: var(--cell-heading-font-size);
-      font-weight: var(--cell-heading-font-weight);
+      font-size: var(--cell-heading-font-size, 9px);
+      font-weight: var(--cell-heading-font-weight, normal);
       text-align: left;
       width: 100%;
-      padding-top: var(--cell-heading-top-padding);
-      padding-right: var(--cell-heading-right-padding);
-      padding-bottom: var(--cell-heading-bottom-padding);
-      padding-left: var(--cell-heading-left-padding);
+      padding: var(--cell-heading-top-padding, var(--DATA-GRID-CELL-TOPBOTTOM-PADDING)) var(--cell-heading-right-padding, var(--DATA-GRID-CELL-RIGHTLEFT-PADDING)) var(--cell-heading-bottom-padding, var(--DATA-GRID-CELL-TOPBOTTOM-PADDING)) var(--cell-heading-left-padding, var(--DATA-GRID-CELL-RIGHTLEFT-PADDING));
       user-select: none;
     }
-    & tfoot .pagination > li > a {
-      padding-top: var(--footer-pagination-top-padding);
-      padding-right: var(--footer-pagination-right-padding);
-      padding-bottom: var(--footer-pagination-bottom-padding);
-      padding-left: var(--footer-pagination-left-padding);
+    tfoot .pagination > li > a {
+      padding: var(--footer-pagination-top-padding, 4px) var(--footer-pagination-right-padding, 2px) var(--footer-pagination-bottom-padding, 4px) var(--footer-pagination-left-padding, 2px);
     }
   }
 }
