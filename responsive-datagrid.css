@@ -4,7 +4,7 @@
         padding-right: 0;
   }
   .stadium-responsive-datagrid {
-    max-height: var(--max-height, 400px);
+    max-height: var(--max-height, 40rem);
     overflow-y: scroll;
     padding: 0;
     
@@ -22,8 +22,8 @@
     }
     tbody tr {
       display: block;
-      margin-bottom: var(--row-bottom-gap, 12px);
-      border: 1px solid var(--row-bottom-border-color, var(--DATA-GRID-CELL-BORDER-COLOR));
+      margin-bottom: var(--row-bottom-gap, 1.2rem);
+      border: 0.1rem solid var(--row-bottom-border-color, var(--DATA-GRID-CELL-BORDER-COLOR));
     }
     tbody tr td {
       display: block;
@@ -32,22 +32,24 @@
       white-space: pre-wrap;
       border: none;
     }
-    tbody tr td:nth-child(1) {
-      background-color: var(--first-cell-background-color, var(--DATA-GRID-PAGINATION-ACTIVE-BACKGROUND-COLOR));
-      color: var(--first-cell-font-color, var(--DATA-GRID-PAGINATION-ACTIVE-FONT-COLOR));
+    tbody td {
+      padding: var(--cell-heading-top-padding, calc(var(--DATA-GRID-CELL-TOPBOTTOM-PADDING)/2)) var(--cell-heading-right-padding, var(--DATA-GRID-CELL-RIGHTLEFT-PADDING)) var(--cell-heading-bottom-padding, calc(var(--DATA-GRID-CELL-TOPBOTTOM-PADDING)/2)) var(--cell-heading-left-padding, var(--DATA-GRID-CELL-RIGHTLEFT-PADDING));
     }
-    tbody tr td:not(td:first-child):before {
+    tbody tr td:before {
       content: attr(name);
       display: block;
-      font-size: var(--cell-heading-font-size, 9px);
+      font-size: var(--cell-heading-font-size, 0.9rem);
       font-weight: var(--cell-heading-font-weight, normal);
       text-align: left;
       width: 100%;
-      padding: var(--cell-heading-top-padding, var(--DATA-GRID-CELL-TOPBOTTOM-PADDING)) var(--cell-heading-right-padding, var(--DATA-GRID-CELL-RIGHTLEFT-PADDING)) var(--cell-heading-bottom-padding, var(--DATA-GRID-CELL-TOPBOTTOM-PADDING)) var(--cell-heading-left-padding, var(--DATA-GRID-CELL-RIGHTLEFT-PADDING));
       user-select: none;
     }
     tfoot .pagination > li > a {
-      padding: var(--footer-pagination-top-padding, 4px) var(--footer-pagination-right-padding, 2px) var(--footer-pagination-bottom-padding, 4px) var(--footer-pagination-left-padding, 2px);
+      padding: var(--footer-pagination-top-padding, 0.4rem) var(--footer-pagination-right-padding, 0.2rem) var(--footer-pagination-bottom-padding, 0.4rem) var(--footer-pagination-left-padding, 0.2rem);
     }
   }
+}
+html {
+  min-height: 100%;
+  font-size: 62.5%;
 }

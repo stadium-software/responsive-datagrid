@@ -11,6 +11,8 @@ This repo contains one Stadium 6.7 application
 # Version 
 1.1 Added code to detect uniqueness of DataGrid classname on page
 
+1.1.1 Updated readme for 6.12+; Changed px to rem; Removed first column header display
+
 ## Application Setup
 1. Check the *Enable Style Sheet* checkbox in the application properties
 
@@ -73,40 +75,40 @@ The *responsive-datagrid-variables.css* file included in this repo contains a se
 1. Open the CSS file called [*responsive-datagrid-variables.css*](responsive-datagrid-variables.css) from this repo in an editor of your choice (I recommend [VS Code](https://code.visualstudio.com/))
 2. Adjust the variables in the *:root* element as you see fit
 
-## Applying the CSS
-How to apply the CSS to your application
-1. Create a folder called *CSS* inside of your Embedded Files in your application
-2. Drag the two CSS files from this repo [*responsive-datagrid-variables.css*](responsive-datagrid-variables.css) and [*responsive-datagrid.css*](responsive-datagrid.css) into that folder
+## CSS
+The CSS below is required for the correct functioning of the module. Variables exposed in the [*css-file-variables.css*](css-file-variables.css) file can be [customised](#customising-css).
 
-#### Stadium 6 (versions 6.6 and above)
-1. Paste the link tags below into the *head* property of your application
+### Before v6.12
+1. Create a folder called "CSS" inside of your Embedded Files in your application
+2. Drag the two CSS files from this repo [*css-file-variables.css*](css-file-variables.css) and [*css-file.css*](css-file.css) into that folder
+3. Paste the link tags below into the *head* property of your application
 ```html
-<link rel="stylesheet" href="{EmbeddedFiles}/CSS/responsive-datagrid.css">
-<link rel="stylesheet" href="{EmbeddedFiles}/CSS/responsive-datagrid-variables.css">
+<link rel="stylesheet" href="{EmbeddedFiles}/CSS/css-file.css">
+<link rel="stylesheet" href="{EmbeddedFiles}/CSS/css-file-variables.css">
 ``` 
 
-#### Stadium 5
-1. Add a Javascript action into the Page.load event handler 
-2. Paste the Javascript below into the Javascript action Code Editor popup
-```javascript
-/* Stadium Script Version 1.1 https://github.com/stadium-software/responsive-datagrid */
-let URL = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname + "//";
-let el1 = document.createElement("link");
-el1.setAttribute("rel","stylesheet");
-el1.setAttribute("href",URL + "Content/EmbeddedFiles/CSS/responsive-datagrid.css");
-document.querySelector("head").appendChild(el1);
-let el2 = document.createElement("link");
-el2.setAttribute("rel","stylesheet");
-el2.setAttribute("href",URL + "Content/EmbeddedFiles/CSS/responsive-datagrid-variables.css");
-document.querySelector("head").appendChild(el2);
+### v6.12+
+1. Create a folder called "CSS" inside of your Embedded Files in your application
+2. Drag the CSS files from this repo [*css-file.css*](css-file.css) into that folder
+3. Paste the link tag below into the *head* property of your application
+```html
+<link rel="stylesheet" href="{EmbeddedFiles}/CSS/css-file.css">
 ``` 
 
-## Upgrading
-To upgrade this module
-1. Pull the latest repo
-2. If you have made changes to the *responsive-datagrid-variables.css* file in your local repo, merge them
-3. You can drag the *responsive-datagrid.css* file into the EmbeddedFiles folder of your application as is
-4. Select "Overwrite" when prompted in Stadium
-5. Open the *responsive-datagrid-variables.css* file 
-6. If new variables were added, change the variables as you see fit 
-7. Drag the updated *responsive-datagrid-variables.css* file into the EmbeddedFiles folder of your application
+### Customising CSS
+1. Open the CSS file called [*css-file-variables.css*](css-file-variables.css) from this repo
+2. Adjust the variables in the *:root* element as you see fit
+3. Stadium 6.12+ users can comment out any variable they do **not** want to customise
+4. Add the [*css-file-variables.css*](css-file-variables.css) to the "CSS" folder in the EmbeddedFiles (overwrite)
+5. Paste the link tag below into the *head* property of your application (if you don't already have it there)
+```html
+<link rel="stylesheet" href="{EmbeddedFiles}/CSS/css-file-variables.css">
+``` 
+6. Add the file to the "CSS" inside of your Embedded Files in your application
+
+**NOTE: Do not change any of the CSS in the 'css-file.css' file**
+
+## Upgrading Stadium Repos
+Stadium Repos are not static. They change as additional features are added and bugs are fixed. Using the right method to work with Stadium Repos allows for upgrading them in a controlled manner. 
+
+How to use and update application repos is described here: [Working with Stadium Repos](https://github.com/stadium-software/samples-upgrading)

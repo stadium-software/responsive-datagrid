@@ -1,25 +1,24 @@
-/* CSS Version 1.1 https://github.com/stadium-software/responsive-datagrid */
 /*the mobile breakpoint is 768px*/
 :root {
-    --max-height: 400px;
+    --max-height: 40rem;
     --first-cell-background-color: #3399ff;
     --first-cell-font-color: white;
     
-    --cell-heading-font-size: 9px;
+    --cell-heading-font-size: 0.9rem;
     --cell-heading-font-weight: normal;
     
     --cell-heading-top-padding: 0;
     --cell-heading-right-padding: 0;
-    --cell-heading-bottom-padding: 6px;
+    --cell-heading-bottom-padding: 0.6rem;
     --cell-heading-left-padding: 0;
 
     --row-bottom-border-color: #ddd;
-    --row-bottom-gap: 12px;
+    --row-bottom-gap: 1.2rem;
 
     --footer-pagination-background-color: white;
 
-    --footer-pagination-top-padding: 4px;
-    --footer-pagination-right-padding: 2px;
-    --footer-pagination-bottom-padding: 4px;
-    --footer-pagination-left-padding: 2px;
+    --footer-pagination-top-padding: 0.4rem;
+    --footer-pagination-right-padding: 0.2rem;
+    --footer-pagination-bottom-padding: 0.4rem;
+    --footer-pagination-left-padding: 0.2rem;
 }
