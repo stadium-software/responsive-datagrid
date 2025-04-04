@@ -61,11 +61,6 @@ observer.observe(table, options);
 1. Drag the "ResponsiveDataGrid" global script into the event handler as the **first action** in the script (important!)
 2. Enter the class you added to the DataGrid above into the *DataGridClass* input parameter (e.g. "datagrid-responsive")
 
-## Customising the ResponsiveDataGrid
-The *responsive-datagrid-variables.css* file included in this repo contains a set of variables that can be changed to customise the responsive view
-1. Open the CSS file called [*responsive-datagrid-variables.css*](responsive-datagrid-variables.css) from this repo in an editor of your choice (I recommend [VS Code](https://code.visualstudio.com/))
-2. Adjust the variables in the *:root* element as you see fit
-
 ## CSS
 The CSS below is required for the correct functioning of the module. Variables exposed in the [*css-file-variables.css*](css-file-variables.css) file can be [customised](#customising-css).
 
