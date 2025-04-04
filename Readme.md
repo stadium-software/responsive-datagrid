@@ -12,11 +12,6 @@ Stadium's DataGrids are not responsive out-of-the-box. So, here is a method you 
 ## Application Setup
 1. Check the *Enable Style Sheet* checkbox in the application properties
 
-## Database, Connector and DataGrid
-
-1. Use the instructions from [this repo](https://github.com/stadium-software/samples-database) to setup the database and DataGrid for this sample
-2. Assign a class to the DataGrid, like "datagrid-responsive". This class will be used to identify the DataGrid that will become responsive. 
-
 ## Global Script
 
 1. Create a Global Script and name it "ResponsiveDataGrid"
