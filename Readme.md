@@ -7,7 +7,7 @@ Stadium's DataGrids are not responsive out-of-the-box. So, here is a method you 
 # Version 
 1.1 Added code to detect uniqueness of DataGrid classname on page
 
-1.1.1 Updated readme for 6.12+; Changed px to rem; Removed first column header display
+1.2 Updated readme for 6.12+; Changed px to rem; Removed first column header display
 
 ## Application Setup
 1. Check the *Enable Style Sheet* checkbox in the application properties
@@ -18,17 +18,17 @@ Stadium's DataGrids are not responsive out-of-the-box. So, here is a method you 
 2. Add an Input parameter to the "ResponsiveDataGrid" script and call it "DataGridClass"
 3. Drag a Javascript action into the script and paste the Javascript below into the *code* property
 ```javascript
-/* Stadium Script Version 1.1 https://github.com/stadium-software/responsive-datagrid */
+/* Stadium Script Version 1.2 https://github.com/stadium-software/responsive-datagrid */
 let dgClassName = "." + ~.Parameters.Input.DataGridClass;
 let dg = document.querySelectorAll(dgClassName);
 if (dg.length == 0) {
-    dg = document.querySelector(".data-grid-container");
+    console.error("The class '" + dgClassName + "' is not assigned to any DataGrids.");
+    return false;
 } else if (dg.length > 1) {
     console.error("The class '" + dgClassName + "' is assigned to multiple DataGrids. DataGrids using this script must have unique classnames");
     return false;
-} else { 
-    dg = dg[0];
 }
+dg = dg[0];
 let table = dg.querySelector("table");
 attachResponsiveClass();
 
