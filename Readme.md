@@ -4,10 +4,6 @@ Stadium's DataGrids are not responsive out-of-the-box. So, here is a method you 
 
 ![](images/view.gif)
 
-## Sample applications
-This repo contains one Stadium 6.7 application
-[ResponsiveDGDisplay.sapz](Stadium6/ResponsiveDGDisplay.sapz?raw=true)
-
 # Version 
 1.1 Added code to detect uniqueness of DataGrid classname on page
 
